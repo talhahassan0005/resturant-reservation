@@ -1,0 +1,294 @@
+/* Restaurants Page Styles */
+
+.restaurants-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ──────────────── PAGE HEADER ──────────────── */
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0;
+  color: #1e293b;
+}
+
+.btn-add-restaurant {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-add-restaurant:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.btn-add-restaurant span {
+  font-size: 16px;
+}
+
+/* ──────────────── FILTERS BAR ──────────────── */
+.filters-bar {
+  display: flex;
+  gap: 12px;
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-input::placeholder {
+  color: #cbd5e1;
+}
+
+.status-filter {
+  padding: 10px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.status-filter:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+/* ──────────────── RESTAURANTS GRID ──────────────── */
+.restaurants-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ──────────────── RESTAURANT CARD ──────────────── */
+.restaurant-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 160px;
+  background: linear-gradient(135deg, #e0e7ff, #f3e8ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 60px;
+}
+
+.restaurant-info {
+  padding: 16px;
+}
+
+.restaurant-info h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: #1e293b;
+}
+
+.location {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0 0 4px;
+  font-weight: 500;
+}
+
+.cuisine {
+  font-size: 13px;
+  color: #475569;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.restaurant-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.rating {
+  font-size: 13px;
+  font-weight: 700;
+  color: #f59e0b;
+}
+
+.status {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-inactive {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.restaurant-actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.action-btn-view,
+.action-btn-edit,
+.action-btn-delete {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-btn-view {
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.action-btn-view:hover {
+  background: #dcfce7;
+  transform: translateY(-1px);
+}
+
+.action-btn-edit {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.action-btn-edit:hover {
+  background: #bfdbfe;
+  transform: translateY(-1px);
+}
+
+.action-btn-delete {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.action-btn-delete:hover {
+  background: #fecaca;
+  transform: translateY(-1px);
+}
+
+/* ──────────────── EMPTY STATE ──────────────── */
+.empty-state {
+  text-align: center;
+  padding: 48px 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.empty-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.empty-state h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #1e293b;
+}
+
+.empty-state p {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page-header h1 {
+    font-size: 24px;
+  }
+
+  .btn-add-restaurant {
+    width: 100%;
+  }
+
+  .filters-bar {
+    flex-direction: column;
+  }
+
+  .search-input,
+  .status-filter {
+    width: 100%;
+  }
+
+  .restaurants-grid {
+    grid-template-columns: 1fr;
+  }
+}
