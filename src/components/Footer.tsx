@@ -22,10 +22,10 @@ export default function Footer() {
             </p>
             <div className="rrs-footer-apps">
               <button className="rrs-footer-app-btn" type="button">
-                🍎 App Store
+                 App Store
               </button>
               <button className="rrs-footer-app-btn" type="button">
-                🤖 Google Play
+                 Google Play
               </button>
             </div>
           </div>
