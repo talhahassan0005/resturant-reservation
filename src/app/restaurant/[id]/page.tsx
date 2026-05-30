@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import type { RootState } from "@/store/store";
 import type { BookingDraft } from "@/store/slices/reservationsSlice";
 import { updateDraft } from "@/store/slices/reservationsSlice";
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import StepBar from "@/components/StepBar";
 
@@ -187,21 +188,15 @@ export default function RestaurantProfilePage() {
 
             {/* Photo Grid */}
             <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: 4, height: 300, borderRadius: 16, overflow: "hidden", boxShadow: "var(--rrs-shadow-lg)" }}>
-              <img
-                src={restaurant.image}
-                alt={restaurant.name}
-                style={{ width: "100%", height: "100%", objectFit: "cover", gridRow: "span 2", display: "block" }}
-              />
-              <img
-                src={restaurant.image}
-                alt={restaurant.name}
-                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 30%", display: "block", filter: "brightness(0.85)" }}
-              />
-              <img
-                src={restaurant.image}
-                alt={restaurant.name}
-                style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 70%", display: "block", filter: "brightness(0.75)" }}
-              />
+              <div style={{ position: "relative", gridRow: "span 2" }}>
+                <Image src={restaurant.image} alt={restaurant.name} fill style={{ objectFit: "cover" }} />
+              </div>
+              <div style={{ position: "relative" }}>
+                <Image src={restaurant.image} alt={restaurant.name} fill style={{ objectFit: "cover", objectPosition: "center 30%", filter: "brightness(0.85)" }} />
+              </div>
+              <div style={{ position: "relative" }}>
+                <Image src={restaurant.image} alt={restaurant.name} fill style={{ objectFit: "cover", objectPosition: "center 70%", filter: "brightness(0.75)" }} />
+              </div>
             </div>
 
             {/* About */}

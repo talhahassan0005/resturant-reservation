@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 import "./restaurants.css";
 
 interface Restaurant {
@@ -110,7 +111,7 @@ function RestaurantForm({ form, setForm }: { form: FormData; setForm: React.Disp
         >
           {form.image ? (
             <>
-              <img src={form.image} alt="preview" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <Image src={form.image} alt="preview" fill unoptimized style={{ objectFit: "cover" }} />
               <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.35)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", color: "#fff", gap: 6 }}>
                 <IcoUpload />
                 <span style={{ fontSize: 12, fontWeight: 600 }}>Click to change image</span>
@@ -248,7 +249,9 @@ export default function RestaurantsPage() {
             {/* Real image */}
             <div className="restaurant-image" style={{ padding: 0, fontSize: 0 }}>
               {r.image ? (
-                <img src={r.image} alt={r.name} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                <div style={{ position: "relative", width: "100%", height: "100%" }}>
+                  <Image src={r.image} alt={r.name} fill unoptimized style={{ objectFit: "cover" }} />
+                </div>
               ) : (
                 <div style={{ width: "100%", height: "100%", background: "#e5e7eb", display: "flex", alignItems: "center", justifyContent: "center", color: "#9ca3af", fontSize: 13, fontWeight: 600 }}>
                   No Image
@@ -291,7 +294,9 @@ export default function RestaurantsPage() {
       {showView && selected && (
         <Modal title="Restaurant Details" onClose={() => setShowView(false)}>
           {selected.image && (
-            <img src={selected.image} alt={selected.name} style={{ width: "100%", height: 180, objectFit: "cover", borderRadius: 10, marginBottom: 16 }} />
+            <div style={{ position: "relative", width: "100%", height: 180, borderRadius: 10, overflow: "hidden", marginBottom: 16 }}>
+              <Image src={selected.image} alt={selected.name} fill unoptimized style={{ objectFit: "cover" }} />
+            </div>
           )}
           {[["Name", selected.name], ["Location", selected.location], ["Cuisine", selected.cuisine], ["Price Range", selected.priceRange], ["Rating", `${selected.rating} / 10`], ["Hours", selected.hours], ["Status", selected.status]].map(([k, v]) => (
             <div key={k} style={{ display: "flex", justifyContent: "space-between", padding: "10px 0", borderBottom: "1px solid #f1f5f9" }}>

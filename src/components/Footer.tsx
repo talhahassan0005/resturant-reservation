@@ -17,7 +17,7 @@ export default function Footer() {
               Table<span>Now</span>
             </div>
             <p className="rrs-footer-brand-desc">
-              Pakistan's fastest-growing restaurant reservation platform.
+              Pakistan&apos;s fastest-growing restaurant reservation platform.
               Book instantly at thousands of top-rated venues.
             </p>
             <div className="rrs-footer-apps">
